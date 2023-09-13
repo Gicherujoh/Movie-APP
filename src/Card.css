@@ -1,0 +1,28 @@
+.image{
+   height: 250px;
+   width: 250px;
+
+}
+.movies{
+    display: grid;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 10px;
+    
+}
+.fav-icon{
+    color: grey;
+    margin-top: 5px;
+    margin-left: 160px;  
+}
+.main-title{
+    margin-left: 10px;
+    margin-top: 15px;
+}
+.movie-title{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}

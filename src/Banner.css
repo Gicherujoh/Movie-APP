@@ -1,0 +1,92 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.banner{
+    object-fit:'contain';
+    margin: 0px;
+    width:auto;
+    height:auto;
+    min-height: 400px;
+   
+}
+.nav-bar{
+    display: flex;
+   justify-content: space-between;
+    align-items: center;
+}
+.search-container {
+    margin-top: 10px;
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Style the input field */
+  .search-container input[type="text"] {
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px; /* Adjust the width as needed */
+  }
+  
+  /* Style the search icon */
+  .search-container i.fa-search {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  .nav-icon{
+    margin-top: 10px;
+    margin-left: 10px;
+    display: flex;
+    border-radius: 50%;
+    padding: 6px;
+    background-color: palevioletred;
+  }
+  .nav-sign{
+    display: flex;
+    margin-top: 10px;
+    margin-right: 10px;
+    align-items: center;
+  }
+  .nav-signin{
+    margin-right: 15px;
+    color: white;
+  }
+  .nav-person{
+    background-color: palevioletred;
+    display: flex;
+    border-radius: 50%;
+    padding: 5px;
+  }
+  .banner-contents{
+    margin-top: 30px;
+    margin-left: 10px;
+  }
+  .banner-content-description{
+    margin-top: 10px;
+  }
+  .banner-title{
+    color: white;
+  }
+  .banner-description{
+    color: white;
+    max-width: 400px;
+  }
+  .banner-button{
+    margin-top: 15px;
+    margin-left: 100px;
+  }
+  .banner-button-trailer{
+    display: flex;
+    width: 150px;
+    padding-top: 4px;
+    padding-left: 15px;
+    padding-bottom: 4px;
+    color: white;
+    font-size: large;
+    border-radius: 5px;
+    background-color: orangered;
+  }
