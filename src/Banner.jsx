@@ -41,8 +41,7 @@ const Banner = ({url}) => {
                  <Person className='person'/>
               </div>
            </div>
-          </div>
-          
+          </div>    
           <div className='banner-contents'>
              <div>
                 <h2 className='banner-title' data-testid="movie-title">{movie?.title} :</h2>

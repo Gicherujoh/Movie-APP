@@ -30,17 +30,14 @@ const Card = ({fetchUrl}) => {
 if(!error){
   <Navigate to='/error'/>
 }
-
 const handleStyle=(movieid)=>{
-  //console.log(movieid)
    if(favourite.includes(movieid)){
         setFavourite(favourite.filter((id)=>id!==movieid))
 
    }else{
       setFavourite([...favourite,movieid])
    }
-}
-
+  }
   return (
    <div>
      {loading? <div>

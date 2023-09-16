@@ -7,7 +7,6 @@ const Error = () => {
            <h2 className='error-page'>404 Page not found</h2>
            <Link to='/'>Home</Link>
        </div>
-
     </div>
   )
   } 
