@@ -5,25 +5,31 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import './Card.css'
 import request from './request';
 import Footer from './Footer';
+import {Navigate} from 'react-router-dom'
 import Banner from './Banner';
-import { Troubleshoot } from '@mui/icons-material';
-import { colors } from '@mui/material';
 const base_url = "https://image.tmdb.org/t/p/original/"
 const Card = ({fetchUrl}) => {
     const [movies,setMovies] = useState([])
     const [favourite,setFavourite]= useState([])
     const [loading,setLoading]=useState(false)
+    const [error,setError]= useState(false)
     useEffect(()=>{
        async function FetchData(){
+        try{
          const request = await axios.get(fetchUrl)
-           
          const slicedMovies = request.data.results.slice(0,12)
           setMovies(slicedMovies)
           setLoading(true)
+        }catch(e){
+           setError(true)
+        }
        }
        FetchData();
     }
 ,[])
+if(!error){
+  <Navigate to='/error'/>
+}
 
 const handleStyle=(movieid)=>{
   //console.log(movieid)

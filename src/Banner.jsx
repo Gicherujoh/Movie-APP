@@ -5,6 +5,7 @@ import './Banner.css'
 const Banner = ({url}) => {
     const [movie,setMovie] = useState([])
     const [loading,setLoading]=useState(false)
+    
     useEffect(()=>{
         async function fetchData(){
           const request = await axios.get(url)

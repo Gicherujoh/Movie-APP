@@ -6,6 +6,7 @@ import Banner from './Banner'
 import request from './request'
 import MovieDetailsPage from './MovieDetailsPage'
 import Footer from './Footer'
+import Error from './Error'
 function App() {
 
   return (
@@ -15,6 +16,7 @@ function App() {
               <Routes>
                   <Route path='/' element={<Card fetchUrl={request.fetchMovies}/>}/>
                   <Route path='movies/:id' element={<MovieDetailsPage url={request.fetchMovies}/>}/>
+                  <Route path='error' element={<Error/>}/>
               </Routes>
         </BrowserRouter>
       

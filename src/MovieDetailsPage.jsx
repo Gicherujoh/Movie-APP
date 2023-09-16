@@ -2,8 +2,10 @@ import React,{useState,useEffect,useCallback} from 'react'
 import { useParams } from 'react-router-dom'
 import axios from './Axios'
 import './MovieDetailsPage.css'
+import Error from './Error'
 const MovieDetailsPage = ({url}) => {
   const [movies,setMovies] = useState(null)
+  const [error,setError] = useState(false)
   
   const {id}= useParams();
   
@@ -15,9 +17,11 @@ const MovieDetailsPage = ({url}) => {
 
         if (filteredMovies.length === 1) {
           setMovies(filteredMovies[0]); // Set the single movie object
+        }else{
+          setError(true)
         }
       } catch (error) {
-        console.error('Error fetching data:', error);
+          setError(true)
       }
     }
     fetchData();
@@ -30,12 +34,12 @@ const MovieDetailsPage = ({url}) => {
 
   return (
     <div>
-      <div>
+     {!error? <div>
           <h2 data-tesid="movie-title" className='movie-title'>Title:{movies?.title}</h2>
           <h5 data-testid="movie-overview"  className='movie-overview'>Description:{movies?.overview}</h5>
           
           <h5 data-testid="movie-releasedate" className='movie-releasedate'>Release Date:{movies?.release_date}</h5>
-      </div>
+      </div>:<Error/>}
 
     </div>
   )
