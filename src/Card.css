@@ -3,7 +3,8 @@
     padding: 0px;
 }
 .image{
-   height: 100px;
+   height: 160px;
+   width: 160px;
    object-fit: contain;
 }
 body{
@@ -22,7 +23,7 @@ body{
 .fav-icon{
     color: grey;
     display: flex;
-    padding-left: 80%;
+    padding-left: 77%;
 }
 .main-title{
     margin-left: 10px;
