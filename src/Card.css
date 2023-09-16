@@ -1,28 +1,42 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
 .image{
-   height: 250px;
-   width: 250px;
-
+   height: 100px;
+   object-fit: contain;
+}
+body{
+    box-sizing: border-box;
+    max-width: 1440px;
 }
 .movies{
+    max-width:1308px;
     display: grid;
-    margin-left: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto;
+    grid-template-columns: repeat(4,23%);
+    grid-template-rows: repeat(3,32%);
     gap: 10px;
-    
+    box-sizing: border-box;
 }
+
 .fav-icon{
     color: grey;
-    margin-top: 5px;
-    margin-left: 160px;  
+    display: flex;
+    padding-left: 80%;
 }
 .main-title{
     margin-left: 10px;
     margin-top: 15px;
 }
 .movie-title{
-    margin-top: 10px;
-    margin-bottom: 5px;
+    margin-top: 5px;
+
 }
+@media screen and(max-width:580px) {
+  .movies{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+}
+    

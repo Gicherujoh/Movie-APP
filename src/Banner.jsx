@@ -12,16 +12,15 @@ const Banner = ({url}) => {
         }
         fetchData();
     },[])
-    console.log(movie)
+ 
   return (
     <div>
         <header
-          className='banner'
+       
           style={{
             backgroundSize:'cover',
             backgroundImage:`url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
-            backgroundPosition:'center center',
-        
+            
           }}
         >
           <div className='nav-bar'>
@@ -37,7 +36,7 @@ const Banner = ({url}) => {
               <h3 >Sign in</h3>
             </div> 
               <div className='nav-person'>
-                 <Person/>
+                 <Person className='person'/>
               </div>
            </div>
           </div>

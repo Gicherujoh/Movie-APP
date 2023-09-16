@@ -1,0 +1,12 @@
+.movie-title{
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+.movie-overview{
+    margin-bottom: 10px;
+    max-width: 400px;
+    margin-left: 10px;
+}
+.movie-releasedate{
+    margin-left: 10px;
+}

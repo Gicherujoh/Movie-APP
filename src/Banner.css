@@ -2,13 +2,8 @@
     margin: 0px;
     padding: 0px;
 }
-.banner{
-    object-fit:'contain';
-    margin: 0px;
-    width:auto;
-    height:auto;
-    min-height: 400px;
-   
+body{
+  box-sizing: border-box;
 }
 .nav-bar{
     display: flex;
@@ -61,6 +56,11 @@
     border-radius: 50%;
     padding: 5px;
   }
+  .banner{
+    object-fit: fit-content;
+    width: 10px;
+    height: 40%;
+  }
   .banner-contents{
     margin-top: 30px;
     margin-left: 10px;
@@ -76,7 +76,7 @@
     max-width: 400px;
   }
   .banner-button{
-    margin-top: 15px;
+    margin-top: 11px;
     margin-left: 100px;
   }
   .banner-button-trailer{
@@ -90,3 +90,23 @@
     border-radius: 5px;
     background-color: orangered;
   }
+  @media screen and (max-width:400px) {
+    .banner{
+      height: 30%;
+      width: 100%;
+    }
+    .nav-sign{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .nav-signin h3{
+        font-size: small;
+
+    }
+    .person{
+      font-size: large;
+    }
+    
+  }
+ 
