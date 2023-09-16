@@ -12,7 +12,7 @@ body{
     max-width: 1440px;
 }
 .movies{
-    max-width:1308px;
+    max-width:1307px;
     display: grid;
     grid-template-columns: repeat(4,23%);
     grid-template-rows: repeat(3,32%);
@@ -23,7 +23,7 @@ body{
 .fav-icon{
     color: grey;
     display: flex;
-    padding-left: 77%;
+    padding-left: 78%;
 }
 .main-title{
     margin-left: 10px;
