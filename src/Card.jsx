@@ -3,35 +3,41 @@ import {useNavigate} from 'react-router-dom'
 import axios from './Axios'
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import './Card.css'
-import { movieContext } from './context';
 import request from './request';
+import Footer from './Footer';
 import Banner from './Banner';
 import { Troubleshoot } from '@mui/icons-material';
 import { colors } from '@mui/material';
 const base_url = "https://image.tmdb.org/t/p/original/"
 const Card = ({fetchUrl}) => {
     const [movies,setMovies] = useState([])
-    const [isClick,setClick]= useState(false)
+    const [favourite,setFavourite]= useState([])
+    const [loading,setLoading]=useState(false)
     useEffect(()=>{
        async function FetchData(){
          const request = await axios.get(fetchUrl)
            
          const slicedMovies = request.data.results.slice(0,12)
           setMovies(slicedMovies)
+          setLoading(true)
        }
        FetchData();
     }
 ,[])
 
-  window.addEventListener('click',()=>{
-   setClick(!isClick)
-   style={
-      color:'red'
-   }
+const handleStyle=(movieid)=>{
+  //console.log(movieid)
+   if(favourite.includes(movieid)){
+        setFavourite(favourite.filter((id)=>id!==movieid))
 
-  });
+   }else{
+      setFavourite([...favourite,movieid])
+   }
+}
+
   return (
-    <div>
+   <div>
+     {loading? <div>
          <Banner url={request.fetchMovies}/>
         <h2 className='main-title'>Featured Movies</h2>
        <div className='movies'>
@@ -52,7 +58,7 @@ const Card = ({fetchUrl}) => {
                
        data-testid="movie-poster" >
           <div className='favourite'>
-            <FavoriteIcon className='fav-icon'/>
+            <FavoriteIcon  onClick={()=>handleStyle(movie.id)} className='fav-icon' style={{color:`${favourite.includes(movie.id)? 'red':'grey'}`}} />
           </div>   
         </header>
           <div>
@@ -64,6 +70,8 @@ const Card = ({fetchUrl}) => {
 ))
         }  
        </div>
+           <Footer/>
+       </div>:<p>Loading...</p>}
     </div>
   )
 }

@@ -32,6 +32,9 @@ body{
     margin-top: 5px;
 
 }
+.active{
+    background-color: 'red';
+}
 @media screen and(max-width:580px) {
   .movies{
       display: grid;

@@ -4,10 +4,12 @@ import {MovieCreationOutlined,Search,Person} from '@mui/icons-material'
 import './Banner.css'
 const Banner = ({url}) => {
     const [movie,setMovie] = useState([])
+    const [loading,setLoading]=useState(false)
     useEffect(()=>{
         async function fetchData(){
           const request = await axios.get(url)
             setMovie(request.data.results[request.data.results.length-6])
+            setLoading(true)
             return request
         }
         fetchData();
@@ -15,8 +17,7 @@ const Banner = ({url}) => {
  
   return (
     <div>
-        <header
-       
+        {loading? <header
           style={{
             backgroundSize:'cover',
             backgroundImage:`url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
@@ -53,8 +54,8 @@ const Banner = ({url}) => {
              <button className='banner-button-trailer'>Watch Trailer</button>
           </div>
             
-        </header>
-    </div>
+        </header>:<p>Loading</p>}
+    </div> 
   )
 }
 

@@ -5,19 +5,19 @@ import Card from './Card'
 import Banner from './Banner'
 import request from './request'
 import MovieDetailsPage from './MovieDetailsPage'
-import { MovieContextProvider } from './context'
+import Footer from './Footer'
 function App() {
 
   return (
     <div>
-      <MovieContextProvider>
+    
         <BrowserRouter>
               <Routes>
                   <Route path='/' element={<Card fetchUrl={request.fetchMovies}/>}/>
                   <Route path='movies/:id' element={<MovieDetailsPage url={request.fetchMovies}/>}/>
               </Routes>
         </BrowserRouter>
-        </MovieContextProvider>
+      
     </div>  
   )
 }
